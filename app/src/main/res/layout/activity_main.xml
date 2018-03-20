@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <TableLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="net.muralidharan.itineraryfactory.MainActivity">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="16dp"
+                android:text="From City"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default">
+
+                <io.github.thegeekybaniya.myapplication.DelayAutoCompleteTextView
+                    android:id="@+id/from_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi|actionSearch"
+                    android:inputType="textCapSentences"
+                    android:minWidth="180dp"
+                    android:paddingRight="@dimen/padding_auto_complete" />
+
+                <ProgressBar
+                    android:id="@+id/from_city_loading_indicator"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="@dimen/margin_default"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="16dp"
+                android:text="To City"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_default">
+
+                <io.github.thegeekybaniya.myapplication.DelayAutoCompleteTextView
+                    android:id="@+id/to_city"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="flagNoExtractUi|actionSearch"
+                    android:inputType="textCapSentences"
+                    android:minWidth="180dp"
+                    android:paddingRight="@dimen/padding_auto_complete" />
+
+                <ProgressBar
+                    android:id="@+id/to_city_loading_indicator"
+                    style="?android:attr/progressBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="@dimen/margin_default"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="16dp"
+                android:text="Round trip"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <CheckBox
+                android:id="@+id/checkbox_roundtrip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:checked="true"
+                android:onClick="onCheckboxClicked" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="16dp"
+                android:text="Onward date"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/onward_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:focusable="false"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/return_date_tablerow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="16dp"
+                android:text="Return Date"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <EditText
+                android:id="@+id/return_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:focusable="false"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="16dp"
+                android:text="Adults"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/num_adults_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="16dp">
+
+            <TextView
+                android:layout_column="0"
+                android:layout_gravity="center_vertical"
+                android:paddingRight="16dp"
+                android:text="Children"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <Spinner
+                android:id="@+id/num_children_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_column="1" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/button_find_flights"
+                android:layout_column="0"
+                android:text="Find flights" />
+
+            <ProgressBar
+                android:id="@+id/flights_loading_indicator"
+                style="?android:attr/progressBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical|left"
+                android:layout_marginLeft="@dimen/margin_default"
+                android:visibility="gone" />
+
+        </TableRow>
+    </TableLayout>
+</ScrollView>
